@@ -14,6 +14,7 @@ namespace Games.Infra.Repository.Implementations
         {
             _context = context;
         }
+
         public async Task SaveOrUpdate(GameResult gameResult)
         {
             var gameResultDb = _context.GameResults.Where(x => x.PlayerId == gameResult.PlayerId && x.GameId == gameResult.PlayerId).FirstOrDefault();

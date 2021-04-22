@@ -9,9 +9,12 @@ namespace Games.Infra.Db
     {
         public ApplicationDbContext CreateDbContext(string[] args)
         {
-            IConfigurationRoot configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile(Directory.GetCurrentDirectory() + "/../Games.API/appsettings.json").Build();
-            var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+                                                .SetBasePath(Directory.GetCurrentDirectory())
+                                                .AddJsonFile(Directory.GetCurrentDirectory() + "/../Games.API/appsettings.json")
+                                                .Build();
             var connectionString = configuration.GetConnectionString("DatabaseConnection");
+            var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
             builder.UseSqlServer(connectionString);
             return new ApplicationDbContext(builder.Options);
         }
