@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Games\Games.Domain\Games.Domain.csproj" />
+    <ProjectReference Include="..\..\Games\Games.Infra\Games.Infra.csproj" />
+  </ItemGroup>
+
 </Project>
