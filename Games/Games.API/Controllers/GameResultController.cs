@@ -19,7 +19,7 @@ namespace Games.API.Controllers
         [HttpPost]
         public async Task<ActionResult> Post(GameResult gameResult)
         {
-            await _resultRepository.SaveOrUpdate(gameResult);
+            await _resultRepository.SaveOrUpdateAsync(gameResult);
             return Ok();
         }
     }
